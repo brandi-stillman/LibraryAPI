@@ -1,0 +1,9 @@
+version: "3.7",
+services:
+    image: redis:latest
+    ports:
+        - "6379:6379"
+sql:
+    image: bstillman/librarysql:latest
+    ports:
+        - "1433:1433"

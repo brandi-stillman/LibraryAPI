@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using LibraryApi.Domain;
+using LibraryApi.Maps;
 using LibraryApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,12 +38,24 @@ namespace LibraryApi
                 });
 
             services.AddTransient<ISystemTime, SystemTime>();
-
             services.AddDbContext<LibraryDataContext>(options =>
 
                 options.UseSqlServer(Configuration.GetConnectionString("LibraryDatabase"))
             ) ;
+            services.AddScoped<IMapBooks, BooksEFMap>();
+            var mapperConfig = new MapperConfiguration(mc =>
+                mc.AddProfile(new BooksProfile())
+            );
 
+            IMapper mapper = mapperConfig.CreateMapper();
+
+            services.AddSingleton<IMapper>(mapper);
+            services.AddSingleton<MapperConfiguration>(mapperConfig);
+            services.AddTransient<ILookupOnCallDevelopers, TeamsOnCallDeveloperLookup>();
+            services.AddDistributedRedisCache(o =>
+            {
+                o.Configuration = Configuration.GetValue<string>("redisHost");
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
