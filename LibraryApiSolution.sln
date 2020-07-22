@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryApi", "LibraryApi\Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryApiIntegrationTests", "LibraryApiIntegrationTests\LibraryApiIntegrationTests.csproj", "{C51017EE-FD02-4A98-A613-C333932D7D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient", "ApiClient\ApiClient.csproj", "{7B6CBB58-ECA7-4D20-9E06-F6CB0E4B44DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiClient", "ApiClient\ApiClient.csproj", "{7B6CBB58-ECA7-4D20-9E06-F6CB0E4B44DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqUtils", "bes200-rabbitmqutils-master\RabbitMqUtils.csproj", "{ADA6FA0C-68B3-4CCE-B1B4-16ECF4DE69C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{7B6CBB58-ECA7-4D20-9E06-F6CB0E4B44DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B6CBB58-ECA7-4D20-9E06-F6CB0E4B44DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B6CBB58-ECA7-4D20-9E06-F6CB0E4B44DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA6FA0C-68B3-4CCE-B1B4-16ECF4DE69C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA6FA0C-68B3-4CCE-B1B4-16ECF4DE69C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA6FA0C-68B3-4CCE-B1B4-16ECF4DE69C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA6FA0C-68B3-4CCE-B1B4-16ECF4DE69C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
